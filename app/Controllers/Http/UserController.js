@@ -5,7 +5,7 @@ const User = use('App/Models/User')
 
 class UserController {
   async store ({ request }) {
-    const data = request.only(['username', 'email', 'password'])
+    const data = request.only(['name', 'username', 'email', 'password', 'role'])
     const addresses = request.input('addresses')
 
     const trx = await Database.beginTransaction()
